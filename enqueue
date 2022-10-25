@@ -1,6 +1,6 @@
 #! /bin/sh
-git pull origin master
-./__enqueue $1
-git add queue
-git commit -m "queue $1"
-git push origin master
+git pull --quiet > out \
+    && ./__enqueue $1 \
+    && git add --quiet queue > out \
+    && git commit -m "queue $1" --quiet > out \
+    && git push --quiet > out 
