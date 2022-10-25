@@ -1,6 +1,6 @@
 #! /bin/sh
 git pull --quiet > out \
-    && ./__enqueue $1 \
+    && ./__dequeue \
     && git add queue > out \
     && git commit -m "queue $1" --quiet > out \
     && git push --quiet > out 
