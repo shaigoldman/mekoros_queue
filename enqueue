@@ -1,0 +1,6 @@
+#! /bin/sh
+git pull origin master
+./__enqueue $1
+git add queue
+git commit -m "queue $1"
+git push origin master
